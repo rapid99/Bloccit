@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AdvertisementController, type: :controller do
+RSpec.describe AdvertisementsController, type: :controller do
   let (:ad) do
     Advertisement.create(
     id: 1,
@@ -18,7 +18,7 @@ RSpec.describe AdvertisementController, type: :controller do
 
     it "assigns [ad] to @advertisement" do
       get :index
-      expect(assigns(:advertisement)).to eq([ad])
+      expect(assigns(:advertisements)).to eq([ad])
     end
   end
 
