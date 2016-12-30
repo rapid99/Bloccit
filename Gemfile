@@ -36,3 +36,6 @@ gem 'turbolinks'
 
 # CSS bootstrap
 gem 'bootstrap-sass'
+
+# Used for encrypting User password
+gem 'bcrypt'
