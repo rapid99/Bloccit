@@ -118,7 +118,7 @@ RSpec.describe SponsoredPostController, type: :controller do
 
     it "redirects to sponsored post index" do
       delete :destroy, {id: sponsored_post.id}
-      expect(response).to redirect_to sponsored_post_path
+      expect(response).to redirect_to "/sponsored_post"
     end
   end
 end
