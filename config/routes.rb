@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :topics do
     resources :posts
   end
+  resources :posts, only: [] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :sponsored_post
   resources :advertisements
   resources :questions

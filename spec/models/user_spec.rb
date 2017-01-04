@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password") }
 
    it { is_expected.to have_many(:posts) }
+   it { is_expected.to have_many(:comments) }
    it { is_expected.to validate_presence_of(:name) }
    it { is_expected.to validate_length_of(:name).is_at_least(1) }
 
@@ -30,6 +31,9 @@ RSpec.describe User, type: :model do
      end
       it "responds to admin?" do
         expect(user).to respond_to(:admin?)
+      end
+      it "responds to moderator?" do
+        expect(user).to respond_to(:moderator?)
       end
       it "responds to member?" do
         expect(user).to respond_to(:member?)
