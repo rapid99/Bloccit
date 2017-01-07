@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+gem 'figaro', '1.0'
 
 group :production do
   gem 'pg'
@@ -10,6 +11,7 @@ group :production do
 end
 
 group :development do
+  gem 'better_errors'
   gem 'sqlite3'
   gem 'pry-rails'
   gem "pry"
