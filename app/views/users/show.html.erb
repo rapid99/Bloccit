@@ -11,16 +11,38 @@
        <div class="media-body">
          <h2 class="media-heading"><%= @user.name %></h2>
          <small>
-           <%= pluralize(@user.posts.count, 'post') %>,
-           <%= pluralize(@user.comments.count, 'comment') %>
+          <%= no_posts %>
+            <%= pluralize(@user.posts.count, 'post') %>,
+           <%= no_comments %>
+            <%= pluralize(@user.comments.count, 'comment') %>
          </small>
        </div>
      </div>
    </div>
  </div>
 
- <h2>Posts</h2>
- <%= render @user.posts %>
 
- <h2>Comments</h2>
- <%= render @user.comments %>
+ <div class="row">
+   <div class="tabbable tabs-left">
+     <ul class="nav nav-tabs">
+       <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+       <li><a href="#comments" data-toggle="tab">Comments</a></li>
+     </ul>
+     <div class="tab-content">
+       <div class="tab-pane active" id="posts">
+         <% if @post == nil %>
+          <%= "User has not submitted any posts" %>
+         <% else %>
+          <% image_tag avatar_url %>
+          <%= render @posts %>
+         <% end %>
+       </div>
+       <div class="tab-pane" id="comments">
+         <% if @comments == nil %>
+          <%= "User has not submitted any comments" %>
+         <% else render @comments %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
