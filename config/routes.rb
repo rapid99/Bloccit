@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :sponsored_post
   resources :advertisements
   resources :questions
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
   post 'users/confirm' => 'users#confirm'
